@@ -1,0 +1,38 @@
+.m-modalListBlackEmployee {
+  padding: 20px;
+  min-width: 500px;
+
+  @media screen and (max-width: 700px) {
+    min-width: 100%;
+  }
+  &__header {
+    &__title {
+      line-height: 100%;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__body {
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &__actions {
+        display: flex;
+        gap: 20px;
+        &__button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.a-formLabel label {
+  color: blue;
+  font-weight: bold;
+}

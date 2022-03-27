@@ -1,0 +1,37 @@
+.o-formListBlackEmployee {
+    padding: 30px;
+    &__box {
+      border: 1px solid var(--q-primary);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+  
+      &.-filter {
+        max-width: 700px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+  
+      &__header {
+        padding: 20px;
+        background-color: var(--q-primary);
+        &__title {
+          line-height: 100%;
+          margin: 0;
+          font-size: 1rem;
+          font-weight: bold;
+          color: white;
+        }
+      }
+  
+      &__body {
+        padding: 20px;
+        &__form {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
+  }
+  

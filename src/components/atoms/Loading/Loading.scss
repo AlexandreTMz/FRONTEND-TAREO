@@ -1,0 +1,22 @@
+.a-loading {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-y: hidden;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}

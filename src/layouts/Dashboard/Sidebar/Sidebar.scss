@@ -1,0 +1,58 @@
+.l-sidebar {
+  background-color: var(--background-sidebar);
+  color: var(--color-sidebar);
+  // font-size: 0.8rem !important;
+  z-index: 99;
+
+  &__header {
+    padding: 10px 0;
+    &__link {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px;
+      box-sizing: border-box;
+      cursor: pointer;
+      gap: 20px;
+      text-decoration: none;
+      color: var(--color-sidebar);
+
+      &__name {
+        user-select: none;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      &.-mini {
+        padding: 5px;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+    padding: 10px;
+
+    &__title {
+      margin-bottom: 10px;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &__item {
+      border-radius: 5px;
+      margin-bottom: 5px;
+
+      &.-subItem {
+        padding-left: 25px !important;
+      }
+    }
+
+    .q-router-link--active {
+      color: var(--color-active-sidebar) !important;
+      background-color: var(--background-active-sidebar);
+    }
+  }
+}

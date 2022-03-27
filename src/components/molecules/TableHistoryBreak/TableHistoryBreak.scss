@@ -1,0 +1,21 @@
+.m-tableHistoryBreak {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    &__inputGroup {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      & > * {
+        width: 100%;
+      }
+    }
+
+    &__actions {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}

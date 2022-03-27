@@ -1,0 +1,18 @@
+// app global css in SCSS form
+
+//variables css app
+:root {
+  --background-sidebar: #343a40;
+  --color-sidebar: #b9bec6;
+  --color-active-sidebar: #343a40;
+  --background-active-sidebar: #ebecec;
+}
+
+//SWAL ALERT ADD Z-INDEX
+.swal2-container {
+  z-index: 9999 !important;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}

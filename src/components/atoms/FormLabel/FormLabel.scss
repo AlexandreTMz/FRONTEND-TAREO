@@ -1,0 +1,8 @@
+.a-formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &--strong{
+    font-weight: bold;
+  }
+}

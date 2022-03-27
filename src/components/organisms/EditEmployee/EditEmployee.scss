@@ -1,0 +1,205 @@
+.o-editEmployee {
+  &__form {
+    padding: 20px;
+
+    &__card {
+      border: 1px solid var(--q-primary);
+      border-radius: 5px;
+      overflow: hidden;
+      // max-width: 1000px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      margin-bottom: 20px;
+
+      &__edit {
+        margin: 0 20px 20px 20px;
+      }
+
+      &__header {
+        padding: 20px;
+        background-color: var(--q-primary);
+        color: white;
+        border-bottom: 1px solid var(--q-primary);
+        font-weight: bold;
+
+        &.-tab {
+          padding: 5px 20px;
+          background-color: transparent;
+          color: black;
+          border-bottom: none;
+        }
+
+        &__title {
+          font-size: 1rem;
+          color: white;
+          margin: 0;
+          line-height: 100%;
+          font-weight: bold;
+        }
+      }
+
+      &__body {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &.-payment {
+          flex-direction: row;
+          width: 100%;
+
+          & > div {
+            width: 100%;
+          }
+        }
+
+        &__actions {
+          display: flex;
+          gap: 20px;
+        }
+
+        &__profile {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          padding: 10px;
+          width: fit-content;
+          border: 2px dashed var(--q-primary);
+          border-radius: 8px;
+          flex-direction: column;
+
+          &:hover {
+            border: 2px dashed #47cf73;
+            background-color: #47cf721c;
+            cursor: pointer;
+          }
+
+          & > * {
+            pointer-events: none;
+          }
+
+          &.--drag {
+            border: 2px dashed #47cf73;
+            background-color: #47cf721c;
+          }
+
+          &__text {
+            text-align: center;
+            &__title {
+              margin: 0;
+              line-height: 100%;
+              font-size: 0.85rem;
+              // font-weight: bold;
+              margin: 10px 0;
+            }
+          }
+
+          &__photo {
+            // border: 2px dashed var(--q-primary);
+            // padding: 30px;
+            border-radius: 100%;
+            cursor: pointer;
+            transition: all 200ms ease;
+            position: relative;
+            background-color: #e9eaf3;
+            position: relative;
+            width: 108px;
+            height: 108px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__preview {
+              width: 108px;
+              height: 108px;
+              overflow: hidden;
+              border-radius: 100%;
+              box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            }
+
+            &__icon {
+              z-index: 9;
+            }
+
+            &__iconPlus {
+              top: -6px;
+              right: 5px;
+              position: absolute;
+            }
+          }
+        }
+
+        &__separator {
+          &__title {
+            font-size: 1.5rem;
+            font-weight: lighter;
+            line-height: 100%;
+            margin: 0 0 10px 0;
+          }
+        }
+
+        &__document {
+          display: flex;
+          margin-bottom: 20px;
+
+          @media screen and (max-width: 700px) {
+            flex-direction: column;
+          }
+
+          &__input {
+            width: 100%;
+          }
+
+          &__button {
+            text-transform: capitalize;
+            white-space: nowrap;
+            padding: 0 20px;
+            border-radius: 0;
+          }
+        }
+
+        &__switch {
+          display: flex;
+          gap: 0px;
+          align-items: center;
+
+          &__title {
+            line-height: 100%;
+            margin: 0;
+            font-weight: bold;
+            font-size: 1rem;
+          }
+        }
+
+        &__empty {
+          @media screen and (max-width: 700px) {
+            display: none;
+          }
+        }
+        &__inputGroup {
+          display: flex;
+          gap: 20px;
+
+          &.-tab {
+            margin-bottom: 20px;
+          }
+
+          @media screen and (max-width: 700px) {
+            display: flex;
+            flex-direction: column;
+          }
+
+          & > * {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__active {
+    border-radius: 8px;
+    border: 2px solid green;
+    margin-bottom: 5px;
+  }
+}

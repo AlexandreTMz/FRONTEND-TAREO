@@ -1,0 +1,63 @@
+.o-home {
+  padding: 20px;
+  &__cards {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    box-sizing: border-box;
+    gap: 20px;
+
+    @media screen and(max-width:700px) {
+      flex-direction: column;
+    }
+    margin-bottom: 50px;
+  }
+
+  &__chart {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--q-primary);
+    overflow: hidden;
+    &__header {
+      padding: 20px;
+      background-color: var(--q-primary);
+      color: white;
+
+      &__title {
+        line-height: 100%;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+
+    &__body {
+      padding: 20px;
+
+      &__filters {
+        // max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        margin-bottom: 30px;
+        gap: 20px;
+        & > * {
+          width: 400px;
+
+          @media screen and(max-width:700px) {
+            width: 100%;
+          }
+        }
+
+        @media screen and(max-width:700px) {
+          flex-direction: column;
+        }
+      }
+
+      &__graphic {
+        position: relative;
+        height: 300px;
+      }
+    }
+  }
+}

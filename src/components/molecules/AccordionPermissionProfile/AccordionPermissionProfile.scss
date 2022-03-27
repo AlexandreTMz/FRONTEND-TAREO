@@ -1,0 +1,73 @@
+div[id^='collapse'] {
+  cursor: pointer;
+}
+
+div[class*=' content'] {
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  height: 0px;
+  flex: 1;
+  padding: 0;
+}
+
+div[id^='collapse'].active ~ div[class*=' content'] {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+}
+
+.o-iconRow::before {
+  content: '\f107';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  transition: all 0.3s ease-out;
+}
+
+div[id^='collapse'].active .o-iconRow::before {
+  content: '\f106';
+  transition: all 0.3s ease-out;
+}
+
+.o-boxPermission {
+  background: #f4f6f9;
+  border: 1px solid #1976d2;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    background: #1976d2;
+    color: white;
+    &__items {
+      width: 40px;
+      height: 40px;
+      background: #343a40;
+      font-size: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      margin-right: 13px;
+    }
+
+    &__row {
+      margin-left: auto;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+  }
+  &__wraper {
+    padding: 5px;
+  }
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
