@@ -1,7 +1,8 @@
 <template>
   <div class="o-formListPermissionTareoEmployee">
-    <q-form class="o-formListPermissionTareoEmployee__form"
-     @submit.prevent="mtd_searchEmployeeLogs"
+    <q-form
+      class="o-formListPermissionTareoEmployee__form"
+      @submit.prevent="mtd_searchEmployeeLogs"
     >
       <div
         class="o-formListPermissionTareoEmployee__wraper o-formListPermissionTareoEmployee__wraper--center o-formListPermissionTareoEmployee__wraper--sm"
@@ -196,7 +197,7 @@ export default defineComponent({
       optionsUser.value = ((resUsers as IResponseFetch).data as IUser[]).map(
         (e: IUser) => ({
           value: e.us_usuario,
-          label: e.us_usuario,
+          label: `${e.us_usuario} - ${e.datos.toUpperCase()}`,
         })
       );
       optionsUser.value.unshift({
@@ -282,11 +283,11 @@ export default defineComponent({
       const formatDataToExcel = ResponseDocuments.map(
         (item: IResReportLogs) => ({
           Tabla: String(item.tbs_mostrar),
-          'Fecha': item.fecha,
+          Fecha: item.fecha,
           'Tipo de auditoria': item.tipo_auditoria,
           'Anterior registro': item.old_value,
           'Nuevo registro': item.new_value,
-          'Usuario': item.usuario
+          Usuario: item.usuario,
         })
       );
       var animalWS = XLSX.utils.json_to_sheet(formatDataToExcel);
@@ -314,7 +315,7 @@ export default defineComponent({
       optionsUser,
       filterSlcTipoAuditoria,
       optionsTipoAuditoria,
-      mtd_searchEmployeeLogs
+      mtd_searchEmployeeLogs,
     };
   },
 });

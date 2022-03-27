@@ -93,9 +93,29 @@
             </q-select>
           </div>
           <div class="o-formListEmployee__inputGroups">
+            <a-form-label label="Estado del empleado">
+              <q-select
+                outlined
+                filled
+                dense
+                :options="[
+                  { label: 'ACTIVO', value: '1' },
+                  { label: 'INACTIVO', value: '0' },
+                  { label: 'TODOS', value: 'T' },
+                ]"
+                v-model="estadoEmpleado"
+              >
+              </q-select>
+            </a-form-label>
+          </div>
+          <div class="o-formListEmployee__inputGroups">
             <q-checkbox v-model="opcionSede" label="Con sede?" />
-            <p v-if="opcionSede">
-              Con esta opción se podrá visualizar las sedes de los empleados; sin embargo, la información mostrada podría duplicarse (Solo será visual)
+          </div>
+          <div class="o-formListEmployee__inputGroups" v-if="opcionSede">
+            <p>
+              Con esta opción se podrá visualizar las sedes de los empleados;
+              sin embargo, la información mostrada podría duplicarse (Solo será
+              visual)
             </p>
           </div>
           <div class="o-formListEmployee__inputGroups">
@@ -182,6 +202,7 @@ import { fetchRequestAPI, readErrorFetch } from 'src/utils/axios';
 import { defineComponent, ref, onMounted, PropType } from 'vue';
 import { useRouter } from 'vue-router';
 import MModalLogTable from 'src/components/molecules/ModalLogTables';
+import AFormLabel from 'components/atoms/FormLabel';
 
 import { MESSAGE_ERROR } from 'src/utils/messages';
 
@@ -197,6 +218,7 @@ interface IEmployeeForm {
   sede: number;
   cargo: number;
   opcionSede: string;
+  estadoEmpleado: string;
 }
 
 export default defineComponent({
@@ -207,8 +229,10 @@ export default defineComponent({
     },
   },
   name: 'OFormListEmployee',
+  emits: ['handEmployee'],
   components: {
     MModalLogTable,
+    AFormLabel,
   },
   setup(props, { emit }) {
     // #region declares
@@ -302,6 +326,7 @@ export default defineComponent({
     const isOpenModalLog = ref(false);
     const LogEmpleado = ref<IEmpleado>();
     const opcionSede = ref(false);
+    const estadoEmpleado = ref({ label: 'ACTIVO', value: '1' });
     // #endregion
 
     // #region methods
@@ -380,6 +405,7 @@ export default defineComponent({
         sede: Number(filterSlcCampus.value?.value),
         cargo: Number(filterSlcPosition.value?.value),
         opcionSede: opcionSede.value ? '1' : '0',
+        estadoEmpleado: estadoEmpleado.value.value,
       };
 
       emit('handEmployee', employeeForm);
@@ -409,6 +435,7 @@ export default defineComponent({
       mtd_slcRowTableLog,
       LogEmpleado,
       opcionSede,
+      estadoEmpleado,
     };
   },
 });
